@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-type FavItem = {
+export type FavItem = {
   id: string | number;
   type: string;
   title: string;
@@ -8,35 +8,56 @@ type FavItem = {
   description?: string;
 };
 
-const initialState: FavItem[] = JSON.parse(
-  typeof window !== "undefined"
-    ? localStorage.getItem("favs") || "[]"
-    : "[]"
-);
+const loadFromStorage = (): FavItem[] => {
+  if (typeof window === "undefined") return [];
+  try {
+    return JSON.parse(localStorage.getItem("favs") || "[]");
+  } catch {
+    return [];
+  }
+};
+
+const saveToStorage = (data: FavItem[]) => {
+  if (typeof window !== "undefined") {
+    localStorage.setItem("favs", JSON.stringify(data));
+  }
+};
 
 const favoriteSlice = createSlice({
   name: "favorites",
-  initialState,
+  initialState: loadFromStorage(),
   reducers: {
     toggleFavorite: (state, action: PayloadAction<FavItem>) => {
-      const exists = state.find((f) => f.id === action.payload.id);
+      const exists = state.find(
+        (f) => f.id === action.payload.id
+      );
 
       let updated;
 
       if (exists) {
-        updated = state.filter((f) => f.id !== action.payload.id);
+        updated = state.filter(
+          (f) => f.id !== action.payload.id
+        );
       } else {
         updated = [...state, action.payload];
       }
 
-      if (typeof window !== "undefined") {
-        localStorage.setItem("favs", JSON.stringify(updated));
-      }
-
+      saveToStorage(updated);
       return updated;
+    },
+
+    // optional helper (safe for reset)
+    setFavorites: (
+      _state,
+      action: PayloadAction<FavItem[]>
+    ) => {
+      saveToStorage(action.payload);
+      return action.payload;
     },
   },
 });
 
-export const { toggleFavorite } = favoriteSlice.actions;
+export const { toggleFavorite, setFavorites } =
+  favoriteSlice.actions;
+
 export default favoriteSlice.reducer;
