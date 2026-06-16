@@ -9,7 +9,7 @@ const items = [
   { name: "Movies", path: "/movies" },
   { name: "Social", path: "/social" },
   { name: "Favorites", path: "/favorites" },
-//   { name: "Settings", path: "/settings" },
+  //   { name: "Settings", path: "/settings" },
 ];
 
 export default function Sidebar() {
@@ -27,11 +27,10 @@ export default function Sidebar() {
             <Link
               key={item.path}
               href={item.path}
-              className={`p-3 rounded-lg text-sm font-semibold transition ${
-                active
+              className={`p-3 rounded-lg text-sm font-semibold transition ${active
                   ? "bg-white text-black"
                   : "text-zinc-300 hover:bg-zinc-800"
-              }`}
+                }`}
             >
               {item.name}
             </Link>

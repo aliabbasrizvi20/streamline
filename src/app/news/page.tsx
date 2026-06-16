@@ -23,7 +23,7 @@ export default function NewsPage() {
             const res = await fetch(
                 "/api/news",
                 {
-                    cache: "no-store" // 🔥 IMPORTANT FIX
+                    cache: "no-store"
                 }
             );
 
@@ -56,7 +56,7 @@ export default function NewsPage() {
 
     const paginated = news.slice(start, end);
 
-    // 🚨 prevents blank hydration flash
+
     if (!mounted) {
         return (
             <DashboardLayout>
@@ -73,7 +73,7 @@ export default function NewsPage() {
                 News
             </h1>
 
-            {/* LOADING */}
+
             {loading ? (
                 <div className="text-gray-400">
                     Fetching latest news...
@@ -84,7 +84,7 @@ export default function NewsPage() {
                 </div>
             ) : (
                 <>
-                    {/* GRID */}
+
                     <div className="grid grid-cols-4 gap-6">
                         {paginated.map((n, i) => (
                             <div
@@ -129,7 +129,7 @@ export default function NewsPage() {
                         ))}
                     </div>
 
-                    {/* PAGINATION */}
+
                     <div className="flex justify-center gap-4 mt-8">
                         <button
                             disabled={page === 1}

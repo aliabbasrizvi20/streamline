@@ -1,9 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 const initialState: string[] = JSON.parse(
-  typeof window !== "undefined"
-    ? localStorage.getItem("prefs") || "[]"
-    : "[]"
+  typeof window !== "undefined" ? localStorage.getItem("prefs") || "[]" : "[]",
 );
 
 const preferenceSlice = createSlice({

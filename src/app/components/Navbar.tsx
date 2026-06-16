@@ -9,7 +9,7 @@ type NavbarProps = {
 
 export default function Navbar({
   search = "",
-  setSearch = () => {},
+  setSearch = () => { },
 }: NavbarProps) {
   return (
     <nav className="h-16 border-b border-zinc-800 bg-zinc-950 px-6 flex items-center justify-between">

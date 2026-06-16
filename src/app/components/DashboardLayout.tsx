@@ -85,11 +85,10 @@ export default function DashboardLayout({ children }: Props) {
                 <button
                   key={opt}
                   onClick={() => toggle(opt)}
-                  className={`px-3 py-1 rounded text-sm border ${
-                    prefs.includes(opt)
+                  className={`px-3 py-1 rounded text-sm border ${prefs.includes(opt)
                       ? "bg-white text-black"
                       : "border-zinc-600"
-                  }`}
+                    }`}
                 >
                   {opt}
                 </button>

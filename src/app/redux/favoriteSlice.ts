@@ -28,16 +28,12 @@ const favoriteSlice = createSlice({
   initialState: loadFromStorage(),
   reducers: {
     toggleFavorite: (state, action: PayloadAction<FavItem>) => {
-      const exists = state.find(
-        (f) => f.id === action.payload.id
-      );
+      const exists = state.find((f) => f.id === action.payload.id);
 
       let updated;
 
       if (exists) {
-        updated = state.filter(
-          (f) => f.id !== action.payload.id
-        );
+        updated = state.filter((f) => f.id !== action.payload.id);
       } else {
         updated = [...state, action.payload];
       }
