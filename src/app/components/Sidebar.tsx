@@ -17,7 +17,7 @@ export default function Sidebar() {
 
   return (
     <div className="w-56 min-h-screen bg-zinc-950 border-r border-zinc-800 p-4">
-      <h2 className="text-white font-bold mb-6 text-lg">Dashboard</h2>
+      <h2 className="text-white font-bold mb-6 text-lg">Streamline</h2>
 
       <div className="flex flex-col gap-2">
         {items.map((item) => {

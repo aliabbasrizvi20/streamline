@@ -53,7 +53,7 @@ export default function DashboardLayout({ children }: Props) {
     <div className="min-h-screen bg-black text-white">
       {/* TOP BAR */}
       <div className="flex justify-between items-center px-4 py-3 border-b border-zinc-800">
-        <h1 className="font-bold text-lg">Dashboard</h1>
+        <h1 className="font-bold text-lg">Streamline</h1>
 
         <div className="flex items-center gap-4">
           <span className="text-xl cursor-pointer">🔔</span>
