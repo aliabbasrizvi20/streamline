@@ -21,7 +21,7 @@ export default function NewsPage() {
             setLoading(true);
 
             const res = await fetch(
-                "https://gnews.io/api/v4/top-headlines?country=in&lang=en&apikey=9e2d2cbee56f53cbfd7cf441a703b5fa",
+                "https://gnews.io/api/v4/top-headlines?country=in&lang=en&apikey=886007129a29af502a84aaf8a0a2e55a",
                 {
                     cache: "no-store" // 🔥 IMPORTANT FIX
                 }
