@@ -46,10 +46,9 @@ export default function Home() {
           prefs.join(" OR ")
         );
 
-        newsUrl = `https://gnews.io/api/v4/search?q=${query}&lang=en&apikey=886007129a29af502a84aaf8a0a2e55a`;
+        newsUrl = `/api/news?q=${query}`;
       } else {
-        newsUrl =
-          "https://gnews.io/api/v4/top-headlines?country=in&lang=en&apikey=886007129a29af502a84aaf8a0a2e55a";
+       newsUrl = "/api/news";
       }
 
       const [newsRes, movieRes, postRes] =
