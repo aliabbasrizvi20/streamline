@@ -45,19 +45,9 @@ const favoriteSlice = createSlice({
       saveToStorage(updated);
       return updated;
     },
-
-    // optional helper (safe for reset)
-    setFavorites: (
-      _state,
-      action: PayloadAction<FavItem[]>
-    ) => {
-      saveToStorage(action.payload);
-      return action.payload;
-    },
   },
 });
 
-export const { toggleFavorite, setFavorites } =
-  favoriteSlice.actions;
+export const { toggleFavorite } = favoriteSlice.actions;
 
 export default favoriteSlice.reducer;
