@@ -1,0 +1,80 @@
+/* .nav-bar{
+    display: flex;
+    justify-content: space-between;
+}
+.side-bar{
+    background: #0C0D17;
+    color: #F3F5F7;
+    padding: 15px;
+    height: 100vh;
+    width: 20%;
+}
+.content-section{
+    width: 100%;
+    background: #0E111A;
+    color: #F6F7FA;
+}
+.middle-section{
+        display: flex;
+}
+.nav-account-section{
+        display: flex;
+    align-items: center;
+    width: 235px;
+    justify-content: space-around;
+}
+.category-section{
+        display: flex;
+    justify-content: space-evenly;}
+ .category{
+       border: 1px solid white;
+    padding: 10px;
+    border-radius: 10px;
+}
+img{
+    max-width: 200px;
+    display: flex;
+}
+.rating{
+    display: flex;
+    justify-content: space-around;
+    text-transform: capitalize;
+}
+.movies{
+    justify-content: space-around;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.rating .rate{
+    display: flex;
+}
+.side-bar li{
+    font-size: x-large;
+}
+p{
+     white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis
+}
+.social-cards {
+    border: 1px solid red;
+}
+.add-fav-btn{
+    text-align: center;
+    background: crimson;
+    width: 100%;
+    padding: 10px;
+    /* color: #333; */
+    /* font-weight: 600;
+    cursor: pointer;
+    color: white;
+}
+
+.movies li{
+    background: white;
+    color: black;
+}
+ul li{
+    list-style: none;
+}  */
