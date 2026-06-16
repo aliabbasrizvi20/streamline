@@ -1,36 +1,36 @@
-"use client";
+// "use client";
 
-import { useEffect } from "react";
+// import { useEffect } from "react";
 
-import { useAppDispatch, useAppSelector }
-  from "../redux/hooks";
+// import { useAppDispatch, useAppSelector }
+//   from "../redux/hooks";
 
-import { setFavorites }
-  from "../redux/favoriteSlice";
+// import { setFavorites }
+//   from "../redux/favoriteSlice";
 
-export default function PersistFavorites() {
+// export default function PersistFavorites() {
 
-  const dispatch = useAppDispatch();
+//   const dispatch = useAppDispatch();
 
-  const favorites =
-    useAppSelector(
-      (state) => state.favorites.items
-    );
+//   const favorites =
+//     useAppSelector(
+//       (state) => state.favorites.items
+//     );
 
-  useEffect(() => {
-    const stored = JSON.parse(
-      localStorage.getItem("favs") || "[]"
-    );
+//   useEffect(() => {
+//     const stored = JSON.parse(
+//       localStorage.getItem("favs") || "[]"
+//     );
 
-    dispatch(setFavorites(stored));
-  }, [dispatch]);
+//     dispatch(setFavorites(stored));
+//   }, [dispatch]);
 
-  useEffect(() => {
-    localStorage.setItem(
-      "favs",
-      JSON.stringify(favorites)
-    );
-  }, [favorites]);
+//   useEffect(() => {
+//     localStorage.setItem(
+//       "favs",
+//       JSON.stringify(favorites)
+//     );
+//   }, [favorites]);
 
-  return null;
-}
+//   return null;
+// }
